@@ -2,7 +2,10 @@ FROM alpine:3.18.3
 ENV FTP_USER=foo \
 	FTP_PASS=bar \
 	GID=1000 \
-	UID=1000
+	UID=1000 \
+    PASV_ADDRESS=0.0.0.0 \
+	PASV_MIN_PORT=40000 \
+    PASV_MAX_PORT=40009
 
 RUN apk add --no-cache --update \
 	vsftpd==3.0.5-r2
